@@ -816,7 +816,7 @@
 			function transactionBroadcast(rawtx) {
 				return Promise.resolve($.ajax({
 					'method': 'POST',
-					'url': getBackend() + '/broadcast',
+					'url': 'http://api.shugacoin.org' + '/broadcast',
 					'data': {
 						'raw': rawtx
 					}
@@ -826,7 +826,7 @@
 			// Estimate fee
 			function estimateFee() {
 				return Promise.resolve($.ajax({
-					'url': getBackend() + '/fee',
+					'url': 'http://api.shugacoin.org' + '/fee',
 				})).then(function(data) {
 					return data
 				})
@@ -835,7 +835,7 @@
 			// Get address balance
 			function addressBalance(address) {
 				return Promise.resolve($.ajax({
-					'url': getBackend() + '/balance/' + address,
+					'url': 'http://api.shugacoin.org' + '/balance/' + address,
 				})).then(function(data) {
 					return data
 				})
@@ -844,7 +844,7 @@
 			// Get address UTXO
 			function getUnspent(address, amount) {
 				return Promise.resolve($.ajax({
-					'url': getBackend() + '/unspent/' + address + '?amount=' + amount,
+					'url': 'http://api.shugacoin.org' + '/unspent/' + address + '?amount=' + amount,
 				})).then(function(data) {
 					return data
 				})
@@ -853,7 +853,7 @@
 			// Get transaction info
 			function transactionInfo(hash) {
 				return Promise.resolve($.ajax({
-					'url': getBackend() + '/transaction/' + hash,
+					'url': 'http://api.shugacoin.org' + '/transaction/' + hash,
 				})).then(function(data) {
 					return data
 				})
